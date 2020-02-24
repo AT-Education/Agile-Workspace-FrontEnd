@@ -1,10 +1,11 @@
 import React from 'react';
 import './HomePage.css';
+import Header from '../Header/Header';
 
 function HomePage(props){
     return(
-        <div className="container">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+            {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item active">
@@ -18,9 +19,11 @@ function HomePage(props){
                     </li>
                     </ul>
                 </div>
-            </nav>
+            </nav> */}
+            <Header>
             {/* <div style={{verticalAlign:'center'}}> */}
             <label className="HomePageLayout"><h1>Welcome to Agile Workspace</h1></label>
+            </Header>
             {/* </div> */}
 
         </div>

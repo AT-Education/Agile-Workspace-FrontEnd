@@ -50,22 +50,26 @@ class Registration extends React.Component{
 
     renderEmployeeForm(){
         return(
-        <>
         <form onSubmit={this.submitEmployeeData}>
-                  <div className="row registrationFormLayout">
+                  <div className="row registrationFormLayout"  style={{marginTop:40}}>
+                    <div className="col-sm-3"/>
+                    <div className="col-sm-5" style={{marginLeft:100}}>
+                            <div className="col-sm-4" style={{textAlign:"center"}}>
+                                <label><b>Employee id</b></label>
+                            </div>
+                            <div className="col-sm-3">
+                                <input type="text" 
+                                className="form-control" 
+                                id="employeeIdTextBox" 
+                                placeholder="BNumber"
+                                style = {{width: 225}}
+                                onChange={e=>this.setState({employeeIdValue:e.target.value})}
+                                ></input>
+                         </div>
+                    </div>
                     <div className="col-sm-3">
-
                     </div>
-                    <div className="col-sm-6">
-                        <label style={{float:"left"}}><b>Employee id</b></label>
-                        <input type="text" 
-                        className="form-control" 
-                        id="employeeIdTextBox" 
-                        placeholder="BNumber"
-                        onChange={e=>this.setState({employeeIdValue:e.target.value})}></input>
-                    </div>
-                    <div className="col-sm-3">                        
-                    </div>
+                    <div className="col-sm-3"></div>
                   </div>
                   <div className="row registrationButtonLayout">
                     <div className="col-sm-12">
@@ -73,35 +77,37 @@ class Registration extends React.Component{
                     </div>
                   </div>
         </form>
-        </>
         )
     }
     renderSeatForm(){
         return(
-        <>
-        <form onSubmit={this.submitSeatData}>
-                  <div className="row registrationFormLayout">
-                    <div className="col-sm-3">
-
+        <form onSubmit={this.submitSeatData} style={{marginTop:40}}>
+                    <div className="row registrationFormLayout">
+                        <div className="col-sm-3"/>
+                                <div className="col-sm-5" style={{marginLeft:100}}>
+                                    <div className="col-sm-4">
+                                        <label style={{float:"center"}}><strong>Seat Number</strong></label>
+                                    </div>
+                                    <div className="col-sm-3">
+                                        <input type="text" 
+                                        className="form-control" 
+                                        id="seatNumberTextBox" 
+                                        placeholder="Seat Number"
+                                        style = {{width: 225}}
+                                        onChange={e=>this.setState({seatNumber:e.target.value})}></input>
+                                    </div>
+                                </div>
+                        <div className="col-sm-3"/>
                     </div>
-                    <div className="col-sm-5">
-                        <label style={{float:"left"}}><strong>Seat Number</strong></label>
-                        <input type="text" 
-                        className="form-control" 
-                        id="seatNumberTextBox" 
-                        placeholder="Seat Number"
-                        onChange={e=>this.setState({seatNumber:e.target.value})}></input>
-                    </div>
-                    <div className="col-sm-3">                        
-                    </div>
-                  </div>
-                  <div className="row registrationButtonLayout">
+                    
+                    <div className="row registrationButtonLayout">
                     <div className="col-sm-12">
                     <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
                   </div>
+                            
+                    
         </form>
-        </>
         )
     }
 
@@ -111,17 +117,18 @@ class Registration extends React.Component{
         console.log(this.state.formOption)
 
         return(
-            <Header>
+            <Header isActive={true}>
             <div style={{marginTop:40}}>
+              <label><h3>Registration</h3></label>  
               <div className="dropdown">
-                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-secondary dropdown-toggle" style={{width:225}} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Choose your Option
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <button className="dropdown-item" onClick={()=>this.setState({formOption:1})}>Add Employee</button>
                     <button className="dropdown-item" onClick={()=>this.setState({formOption:2})}>Add Seat</button>
                 </div>
-                </div>
+              </div>
                 {
                     this.state.formOption === 1?this.renderEmployeeForm()   :(this.state.formOption === 2)?this.renderSeatForm():null
                 }
