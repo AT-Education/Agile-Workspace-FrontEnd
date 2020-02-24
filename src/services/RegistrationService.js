@@ -2,10 +2,10 @@ import axios from "axios";
 
 export function postEmployeeData(employeeId){
 
-    const url="http://www.mocky.io/v2/5e536b302e0000b50c2dab0a";
-    return axios.post(url,{employeeId:employeeId},{ headers: { 'Content-Type': 'application/json' }});
+    const url="https://agileworkspace-backend.azurewebsites.net/api/Registration/employee";
+    return axios.post(url,{Name:employeeId},{ headers: { 'Content-Type': 'application/json' }});
 }
 export function postSeatData(seatId){
-    const url="http://www.mocky.io/v2/5e536b302e0000b50c2dab0a";
-    return axios.post(url,{seatId:seatId},{ headers: { 'Content-Type': 'application/json' }});
+    const url="https://agileworkspace-backend.azurewebsites.net/api/Registration/seat";
+    return axios.post(url,{Name:seatId},{ headers: { 'Content-Type': 'application/json' }});
 }

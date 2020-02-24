@@ -18,6 +18,7 @@ class Registration extends React.Component{
         try{
             
             const postRegistrationDataServiceResponse = await postEmployeeData(this.state.employeeIdValue);
+            this.setState({employeeIdValue:""});
             console.log(postRegistrationDataServiceResponse)
             console.log("Inside")
         }
@@ -31,6 +32,7 @@ class Registration extends React.Component{
         try{
             
             const postRegistrationDataServiceResponse = await postSeatData(this.state.seatNumber);
+            this.setState({seatNumber:""});
             console.log(postRegistrationDataServiceResponse.data)
             console.log("Inside")
         }

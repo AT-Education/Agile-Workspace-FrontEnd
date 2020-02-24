@@ -33,9 +33,9 @@ class SeatInfo extends React.Component{
                             <tbody>
                                 {
                             seatInfoList.map(item=>(
-                                    <tr key={item.Id}>
-                                        <td>{item.Name}</td>
-                                        <td>{item.Seat}</td>
+                                    <tr key={item.employeeId}>
+                                        <td>{item.name}</td>
+                                        <td>{item.seatId}</td>
                                     </tr>                        
                             ))
                             }
